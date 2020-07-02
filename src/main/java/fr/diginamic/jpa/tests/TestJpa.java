@@ -23,7 +23,9 @@ public class TestJpa {
 		//Insérez un nouveau Livre de votre choix en base de données
 		EntityTransaction et = em.getTransaction();
 		et.begin();
-		Livre nvLivre = new Livre(6,"Oui-Oui code en Java","Léo Sénique");
+		Livre nvLivre = new Livre();
+		nvLivre.setTitre("Oui-Oui code en Java");
+		nvLivre.setAuteur("Léo Sénique");
 		em.persist(nvLivre);
 		
 		//Modifiez le titre du livre d’identifiant 5 qui possède une erreur : le nouveau titre doit être
