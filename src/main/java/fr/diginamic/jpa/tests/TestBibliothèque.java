@@ -5,6 +5,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 
+import fr.diginamic.jpa.entites.Client;
 import fr.diginamic.jpa.entites.Emprunt;
 import fr.diginamic.jpa.entites.Livre;
 
@@ -20,7 +21,9 @@ public class TestBibliothèque {
 		queryLivresEmprunt.getResultList().forEach(l -> System.out.println("Titre : "+l.getTitre()+"\tAuteur : "+l.getAuteur()));
 		
 		//Réalisez une requête qui permet d’extraire tous les emprunts d’un client donné.
-		TypedQuery<Emprunt> queryEmpruntsClient = em.createQuery("select e from Emprunt e join e.client c where c.id=1", Emprunt.class);
+		Client c1 = em.find(Client.class, 1);
+		TypedQuery<Emprunt> queryEmpruntsClient = em.createQuery("select e from Emprunt e join e.client c where c.nom=?1", Emprunt.class);
+		queryEmpruntsClient.setParameter(1, c1.getNom());
 		System.out.println("Emprunts du client d'ID=1 :");
 		queryEmpruntsClient.getResultList().forEach(e -> System.out.println("Id : "+e.getId()+"\t Date début : "+e.getDateDebut()));
 		
