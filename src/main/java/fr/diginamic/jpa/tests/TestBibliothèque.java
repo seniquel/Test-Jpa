@@ -24,7 +24,7 @@ public class TestBibliothèque {
 		Client c1 = em.find(Client.class, 1);
 		TypedQuery<Emprunt> queryEmpruntsClient = em.createQuery("select e from Emprunt e join e.client c where c.nom=?1", Emprunt.class);
 		queryEmpruntsClient.setParameter(1, c1.getNom());
-		System.out.println("Emprunts du client d'ID=1 :");
+		System.out.println("Emprunts de "+c1.getPrenom()+" "+c1.getNom()+" :");
 		queryEmpruntsClient.getResultList().forEach(e -> System.out.println("Id : "+e.getId()+"\t Date début : "+e.getDateDebut()));
 		
 		
