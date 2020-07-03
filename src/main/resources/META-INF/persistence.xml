@@ -14,4 +14,30 @@ http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd" version="2.1">
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect" />
 		</properties>
 	</persistence-unit>
+	
+	<persistence-unit name="banque-pu" transaction-type="RESOURCE_LOCAL">
+	<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+	<class>fr.diginamic.banque.entites.Banque</class>
+	<class>fr.diginamic.banque.entites.Client</class>
+	<class>fr.diginamic.banque.entites.Compte</class>
+	<class>fr.diginamic.banque.entites.Operation</class>
+	<class>fr.diginamic.banque.entites.Adresse</class>
+		<properties>
+			<!-- desactiver l'autodetection des classes de type @Entity -->
+			<property name="hibernate.archive.autodetection" value="" />
+			<!-- Activation de la génération des tables manquantes uniquement -->
+			<property name="hibernate.hbm2ddl.auto" value="update"/>
+			<!-- Drop and create à chaque redémarrage -->
+			<property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
+			
+			<!-- Affichage des requêtes SQL -->
+			<property name="hibernate.show_sql" value="true" />
+			<!-- Paramètres d'accès à la BDD -->
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://bdjxkuqzkx5zupcynzpz-mysql.services.clever-cloud.com:3306/bdjxkuqzkx5zupcynzpz" />
+			<property name="javax.persistence.jdbc.user" value="umghpp6hwvzmavft" />
+			<property name="javax.persistence.jdbc.password" value="emJ6pxSRgO3lrJfX7CtD" />
+			<property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />
+		
+		</properties>
+	</persistence-unit>
 </persistence>
