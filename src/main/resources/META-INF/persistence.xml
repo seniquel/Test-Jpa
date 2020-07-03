@@ -22,6 +22,9 @@ http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd" version="2.1">
 	<class>fr.diginamic.banque.entites.Compte</class>
 	<class>fr.diginamic.banque.entites.Operation</class>
 	<class>fr.diginamic.banque.entites.Adresse</class>
+	<class>fr.diginamic.banque.entites.LivretA</class>
+	<class>fr.diginamic.banque.entites.AssuranceVie</class>
+	<class>fr.diginamic.banque.entites.Virement</class>
 		<properties>
 			<!-- desactiver l'autodetection des classes de type @Entity -->
 			<property name="hibernate.archive.autodetection" value="" />

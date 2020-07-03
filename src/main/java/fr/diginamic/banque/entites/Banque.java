@@ -28,4 +28,53 @@ public class Banque {
 	public Banque() {
 	}
 	
+	/** Ajoute un nouveau client à la liste des clients
+	 * @param nvClient Nouveau client
+	 */
+	public void addClient(Client nvClient) {
+		clients.add(nvClient);
+	}
+
+	/** Getter
+	 * @return the id
+	 */
+	public int getId() {
+		return id;
+	}
+
+	/** Setter
+	 * @param id the id to set
+	 */
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	/** Getter
+	 * @return the nom
+	 */
+	public String getNom() {
+		return nom;
+	}
+
+	/** Setter
+	 * @param nom the nom to set
+	 */
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+	/** Getter
+	 * @return the clients
+	 */
+	public Set<Client> getClients() {
+		return clients;
+	}
+
+	/** Setter
+	 * @param clients the clients to set
+	 */
+	public void setClients(Set<Client> clients) {
+		this.clients = clients;
+	}
+	
 }
