@@ -39,7 +39,7 @@ public class Client {
 	private Banque banque;
 	
 	@ManyToMany(cascade = {CascadeType.ALL})
-	@JoinTable(name="COMPO",
+	@JoinTable(name="CLIENT_COMPTE",
 			joinColumns= @JoinColumn(name="ID_CLI", referencedColumnName = "ID"),
 			inverseJoinColumns= @JoinColumn(name="ID_COM", referencedColumnName = "ID"))
 	private Set<Compte> comptes = new HashSet<>();
